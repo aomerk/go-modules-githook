@@ -11,4 +11,4 @@
 
 3. Copy `pre-commit` and `post-commit` scripts to:
     - your repositories' hooks (`.git/hooks`) 
-    - or your global hooks See this [page](https://coderwall.com/p/jp7d5q/create-a-global-git-commit-hook) for a tutorial about adding global git hooks
+    - or your global hooks. See this [page](https://coderwall.com/p/jp7d5q/create-a-global-git-commit-hook) for a tutorial about adding global git hooks
