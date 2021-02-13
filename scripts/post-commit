@@ -1,10 +1,12 @@
 #!/bin/sh
 
 # check if the developer really want to commit go.mod
-go_mod_exists="$(git diff --cached --name-only | grep -c -E '\go.mod$')"
+# is there a staged go.mod file?
+go_mod_staged="$(git diff --cached --name-only | grep -c -E '\go.mod$')"
 
-if [[ $go_mod_exists -eq 0 ]] ; then
+if [[ $go_mod_staged -eq 0 ]] ; then
 	exit 0
 fi
 
+# move back the original go.mod file. 
 mv /tmp/go.mod  go.mod
