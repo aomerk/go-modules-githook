@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# check if the developer really want to commit go.mod
+go_mod_exists="$(git diff --cached --name-only | grep -c -E '\go.mod$')"
+
+if [[ $go_mod_exists -eq 0 ]] ; then
+	exit 0
+fi
+
+cp ./go.mod /tmp/go.mod 
+
+sed -i '/replace .* => [/.].*/d' go.mod
+
+git add go.mod
