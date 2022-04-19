@@ -1,3 +1,8 @@
+# DEPRECATED.
+Starting with version 1.18, go now supports workspaces. It is a better solution to override dependencies in different environments. 
+
+[See documentation](https://tip.golang.org/doc/go1.18)
+
 ## Requirements
 
 - git 
